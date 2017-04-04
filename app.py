@@ -9,7 +9,6 @@ def root():
 
 @app.route("/data/")
 def data():
-    makes = ['Mercury', 'Maserati', 'Chevrolet', 'Porsche', 'Lamborghini', 'Mercedes-Benz', 'Jaguar', 'Ford', 'Suzuki', 'Maybach', 'Dodge', 'Scion', 'Rolls-Royce', 'Cadillac', 'Honda', 'Hyundai', 'AMG', 'Volkswagen', 'Mazda', 'Jeep', 'Chrysler Group LLC', 'Infiniti', 'BMW', 'Kia', 'Mitsubishi', 'Land Rover', 'Grand Cherokee', 'MINI', 'Lincoln', 'Acura', 'Saab', 'GMC', 'Aston Martin', 'Nissan', 'Toyota', 'Volvo', 'BMW Motorrad', 'Ferrari', 'Chrysler', 'Mercedes', 'Mercedes-AMG', 'Bentley', 'Lotus', 'Subaru', 'Buick', 'Lexus', 'Audi']
     formatted = {
         2009: dict(),
         2010: dict(),
@@ -21,8 +20,7 @@ def data():
         for car in cars.get_cars_by_year(year, test=False):
             make = car['Identification']['Make']
             if make not in formatted[year]:
-                formatted[year][make] = list()
-            (formatted[year][make]).append(car)
+                formatted[year][make] = car
 
     return jsonify(formatted)
 

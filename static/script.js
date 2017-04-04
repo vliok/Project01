@@ -1,12 +1,14 @@
-var car_data;
-$.getJSON("/data/", data_callback)
 
-function data_callback(r) {
-    car_data = r;
-}
 
 $(document).ready( function() {
-    //console.log(car_data);
+    var car_data;
+    $.getJSON("/data/", data_callback)
+
+    function data_callback(r) {
+        car_data = r;
+    }
+
+    console.log(car_data);
     $('#years').slider({
         min: 2009,
         max: 2012,
