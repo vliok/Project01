@@ -13,18 +13,20 @@
             <div id="makediv">
                 <label for="makelist">Select a Make:</label>
                 <select name="makelist" id="makes">
-                    <option value="Option1">Option1</option>
-                    <option value="Option2">Option2</option>
+                    <option value="new">Select a Year from the Slider</option>
                 </select>
+
+            </div>
+            <div id="display">
             </div>
         </div>
-        <svg id="a" height="750" width="1000" xmlns="http://ww.w3.org/2000/avg">
+        <!--svg id="a" height="750" width="1000" xmlns="http://ww.w3.org/2000/avg">
                  
-        </svg>
+        </svg-->
         <script src="//code.jquery.com/jquery-1.12.4.js"></script>
         <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="//d3js.org/d3.v4.min.js"></script>
         <script src="{{ url_for('static', filename='script.js') }}"></script>
-	<script src="{{ url_for('static', filename='svgs.js') }}"></script>
+        <script src="{{ url_for('static', filename='svgs.js') }}"></script>
     </body>
 </html>
