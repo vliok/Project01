@@ -12,3 +12,6 @@
 
 ####Vincent Liok -4/4
 * Graph shows length, width, and height of car selected by slider and dropdown
+
+###Ziyan Lin -4/5
+* Linked slider to svg & removed junk code, car now goes on repeat and updates with the slider and selector
