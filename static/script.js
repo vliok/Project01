@@ -58,8 +58,30 @@ $(document).ready( function() {
             .text( function(d) {
                     return d + " in";
                 });
+		var table = d3.select("#table");		
+		var engine=car["Engine Information"]["Driveline"];
+		var horse=car["Engine Information"]["Engine Statistics"]["Horsepower"];
+		var torque=car["Engine Information"]["Engine Statistics"]["Torque"];
+		var MPGC=car["Fuel Information"]["City mpg"];
+		var MPGH=car["Fuel Information"]["Highway mpg"];
+		
+		var listinfo=[engine,horse,torque,MPGC,MPGH];
+        var specz = table.selectAll(".specz")
+            .data(listinfo)
+            .text( function(d) {
+                    return d;
+                });
+
+     
+ 
+		console.log(engine);
+		console.log(horse);
+		console.log(torque);
+		console.log(MPGC);
+		console.log(MPGH);
+		  
+
         
-        d3.select('#display').text(JSON.stringify(car));
     }
 
 });
