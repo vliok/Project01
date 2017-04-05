@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cars</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <div id="years">
+                <div id="custom-handle" class="ui-slider-handle"></div>
+            </div>
+            <div id="makediv">
+                <label for="makelist">Select a Make:</label>
+                <select name="makelist" id="makes">
+                    <option value="new">Select a Year from the Slider</option>
+                </select>
+
+            </div>
+            <div id="display">
+            </div>
+        </div>
+        <svg id="a" height="750" width="1000" xmlns="http://ww.w3.org/2000/avg">
+                 
+        </svg>
+        <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="//d3js.org/d3.v4.min.js"></script>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <script src="{{ url_for('static', filename='svgs.js') }}"></script>
+    </body>
+</html>

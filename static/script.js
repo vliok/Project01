@@ -46,10 +46,46 @@ $(document).ready( function() {
         
         //data for make and year
         var car = car_data[year][make];
+
+	var graph = d3.select("#graph");
+        var list_dimensions = [car["Dimensions"]["Height"],car["Dimensions"]["Length"],car["Dimensions"]["Width"]];
+        var dimensions = graph.selectAll(".dimensions")
+            .data(list_dimensions)
+            .transition()
+            .duration(1500)
+            .style("width", function(d) {
+                    return 2*d + "px";
+                })
+            .text( function(d) {
+                    return d + " in";
+                });
+		var table = d3.select("#table");		
+		var engine=car["Engine Information"]["Driveline"];
+		var horse=car["Engine Information"]["Engine Statistics"]["Horsepower"];
+		var torque=car["Engine Information"]["Engine Statistics"]["Torque"];
+		var MPGC=car["Fuel Information"]["City mpg"];
+		var MPGH=car["Fuel Information"]["Highway mpg"];
+		
+		var listinfo=[engine,horse,torque,MPGC,MPGH];
+        var specz = table.selectAll(".specz")
+            .data(listinfo)
+            .text( function(d) {
+                    return d;
+                });
+
+     
+ 
+		console.log(engine);
+		console.log(horse);
+		console.log(torque);
+		console.log(MPGC);
+		console.log(MPGH);
+		  
+
         
-        d3.select('#display').text(JSON.stringify(car));
     }
 
+<<<<<<< HEAD
 });
 
 
@@ -197,3 +233,6 @@ window.onload = function(){
       anime();
 };
 */
+=======
+});
+>>>>>>> 37ad90ce505ab0667a2e88e0cb3f81e3577d6b45
