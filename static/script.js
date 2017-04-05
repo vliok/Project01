@@ -43,8 +43,13 @@ $(document).ready( function() {
         display();
 	anime();
     });
-
+var svgbox = document.getElementById("a");
+var u = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+var i = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+svgbox.appendChild(u);
+svgbox.appendChild(i);
     function display() {
+
         var year = $('#years').slider("value");
         var make = $('#makes').val();
         console.log(make, year);
@@ -71,12 +76,30 @@ $(document).ready( function() {
 		var MPGC=car["Fuel Information"]["City mpg"];
 		var MPGH=car["Fuel Information"]["Highway mpg"];
 		
+		
 		var listinfo=[engine,horse,torque,MPGC,MPGH];
         var specz = table.selectAll(".specz")
             .data(listinfo)
             .text( function(d) {
                     return d;
                 });
+				
+	var svg = d3.select("#a");
+ 
+ var circ1 = svg.append("circle")
+       .attr("cx", 650)
+       .attr("cy", 100)
+      .attr("r", MPGC*3)
+      .style("fill", "purple");
+
+ var circ2 = svg.append("circle")
+       .attr("cx", 650)
+       .attr("cy", 100)
+      .attr("r", MPGH)
+      .style("fill", "yellow");
+	
+		
+
 
      
  
