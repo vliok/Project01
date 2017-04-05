@@ -1,8 +1,13 @@
 var car_data;
 $(document).ready( function() {
-    $.getJSON("/data/", function(r) {
+
+    $.getJSON("/data/").success(function(r) {
         car_data = r;
+        cont();
     })
+
+    function cont() {
+    
 
     function update_dropdown(year) {
         var dropdown = document.querySelector('#makes');
@@ -80,8 +85,9 @@ $(document).ready( function() {
 		console.log(MPGC);
 		console.log(MPGH);
 		  
-
         
+    }
+
     }
 
 });
