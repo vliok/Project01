@@ -46,46 +46,10 @@ $(document).ready( function() {
         
         //data for make and year
         var car = car_data[year][make];
-
-	var graph = d3.select("#graph");
-        var list_dimensions = [car["Dimensions"]["Height"],car["Dimensions"]["Length"],car["Dimensions"]["Width"]];
-        var dimensions = graph.selectAll(".dimensions")
-            .data(list_dimensions)
-            .transition()
-            .duration(1500)
-            .style("width", function(d) {
-                    return 2*d + "px";
-                })
-            .text( function(d) {
-                    return d + " in";
-                });
-		var table = d3.select("#table");		
-		var engine=car["Engine Information"]["Driveline"];
-		var horse=car["Engine Information"]["Engine Statistics"]["Horsepower"];
-		var torque=car["Engine Information"]["Engine Statistics"]["Torque"];
-		var MPGC=car["Fuel Information"]["City mpg"];
-		var MPGH=car["Fuel Information"]["Highway mpg"];
-		
-		var listinfo=[engine,horse,torque,MPGC,MPGH];
-        var specz = table.selectAll(".specz")
-            .data(listinfo)
-            .text( function(d) {
-                    return d;
-                });
-
-     
- 
-		console.log(engine);
-		console.log(horse);
-		console.log(torque);
-		console.log(MPGC);
-		console.log(MPGH);
-		  
-
         
+        d3.select('#display').text(JSON.stringify(car));
     }
 
-<<<<<<< HEAD
 });
 
 
@@ -120,9 +84,13 @@ var big = {
 "2010Cadillac" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG8yPdCrkVXG1ma6XZPaO9xzfwo0fNuEFH7AThLZY8rfdU1-nIsA",
 "2010Chevrolet" : "https://static.cargurus.com/images/site/2010/01/20/22/14/2010_chevrolet_colorado-pic-3056726734462114662-1600x1200.png",
 "2011AMG" : "http://www.blogcdn.com/www.autoblog.com/media/2011/11/lead2-mercedes-c63-amg-black-series.jpg",
+"2011Acura" : "https://media.ed.edmunds-media.com/acura/mdx/2011/oem/2011_acura_mdx_4dr-suv_base_fq_oem_1_500.jpg",
+"2011Aston Martin" : "https://www.cstatic-images.com/phototab/7/d/2/b7/f6cce38b65af23577b1d09da563.jpg",
+"2011Audi" : "http://www.bestcarsnews.com/wp-content/uploads/2011/07/2011-Audi-A3.jpg",
 "2011Buick" : "http://www.roadtests.com/images/buick/enclave/2011/760/2011_buick_enclave_picture%20(9).jpg",
 "2011Dodge" : "http://spidercars.net/wp-content/uploads/images/2011-Dodge-Avenger_7622.jpg",
 "2012Acura" : "http://www.blogcdn.com/www.autoblog.com/media/2011/09/lead2-2012-acura-tl-sh-awd-review.jpg",
+"2012Aston Martin" : "http://st.motortrend.com/uploads/sites/5/2011/02/2012-aston-martin-virage-side.jpg?interpolation=lanczos-none&fit=around%7C660%3A414",
 "2012Jeep" : "http://onsurga.com/wp-content/uploads/2012/04/2012-Jeep-Compass.jpg",
 "2012Kia" : "http://images.newcars.com/images/car-pictures/original/2012-Kia-Sedona-Minivan-Van-LX-Front-wheel-Drive-Passenger-Van-Photo-7.png"
 
@@ -178,25 +146,27 @@ var anime = function(event){
                     if(j >= 2 * c){
                         j=0;
                     }
-	            n.setAttribute("y", d - 170 + parseInt(zi.top));
+	            n.setAttribute("y", d - 770 + parseInt(zi.top));
 	            n.setAttribute("height","150");
 		    n.setAttribute("width","200");
                     n.setAttribute("preserveAspectRatio", "none");
 	            a.appendChild(n);
 
+                    /*
                     var rec = document.createElementNS("http://www.w3.org/2000/svg","rect");
                     rec.setAttribute("x", j + parseInt(zi.left) + 100);
-                    rec.setAttribute("y", parseInt(zi.top) + d + 60);
+                    rec.setAttribute("y", parseInt(zi.top) + d - 240);
                     rec.setAttribute("height", "20");
                     rec.setAttribute("width", "10");  
                     a.appendChild(rec);
+                    */
 
                     j++;
                         
                     var road = document.createElementNS("http://www.w3.org/2000/svg","image");	
 	            road.setAttribute("href", "http://previewcf.turbosquid.com/Preview/2014/08/01__15_05_14/road%20and%20sidewalk_01LOW.jpg601e495b-872b-4974-853b-d03136d39c75Larger.jpg" );
 	            road.setAttribute("x", parseInt(zi.left));
-	            road.setAttribute("y", parseInt(zi.top) + d - 40);
+	            road.setAttribute("y", parseInt(zi.top) + d - 640);
 	            road.setAttribute("height","100");
 		    road.setAttribute("width",2 * c);
                     road.setAttribute("preserveAspectRatio", "none");
@@ -233,6 +203,3 @@ window.onload = function(){
       anime();
 };
 */
-=======
-});
->>>>>>> 37ad90ce505ab0667a2e88e0cb3f81e3577d6b45
