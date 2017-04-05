@@ -33,7 +33,7 @@ var anime = function(stuff){
     var j = 0;
     //var mop = Math.round(900/(stuff[4] - stuff[0]));
                var anim = function(event){
-                    var lol;
+               /*   var lol;
                     if(j > 600){
                        lol = 800;
                     }
@@ -45,7 +45,7 @@ var anime = function(stuff){
                     }
                     else{
                        lol = 200;
-                    }
+                    }               */
                     clear();
                     var n = document.createElementNS("http://www.w3.org/2000/svg","image");	
 	            n.setAttribute("href", "http://www.lambocars.com/images/gallardo/gallsuper5.jpg" );
@@ -72,7 +72,9 @@ var anime = function(stuff){
 		    road.setAttribute("width","1000");
                     road.setAttribute("preserveAspectRatio", "none");
 	            a.appendChild(road);
-
+ 
+                    
+                    /*
                     if((100 >= Math.abs(200 - j)) || (100 >= Math.abs(400 - j)) || (100 >= Math.abs(600 - j)) || (100 >= Math.abs(800 - j))){
                        var z = document.createElementNS("http://www.w3.org/2000/svg","line");
                        z.setAttribute("x1", lol + parseInt(zi.left));
@@ -82,8 +84,8 @@ var anime = function(stuff){
                        z.setAttribute("style", "stroke:rgb(102,51,153);stroke-width:3");
                        a.appendChild(z);
                     }
-
-
+                      (scrapped transformation points)
+                    */
                     
                     rid = window.requestAnimationFrame( anim );
 
@@ -101,7 +103,3 @@ var clear = function(event){
 window.onload = function(){
       anime(prac);
 };
-
-q.addEventListener('click', anime);
-t.addEventListener('click', anime);
-r.addEventListener('click', clear);
