@@ -47,7 +47,6 @@ $(document).ready( function() {
         //data for make and year
         var car = car_data[year][make];
         
-        d3.select('#display').text(JSON.stringify(car));
     }
 
 });
