@@ -12,3 +12,6 @@
 
 ####Vincent Liok -4/4
 * Graph shows length, width, and height of car selected by slider and dropdown
+
+####Shariar Kabir -4/4
+* D3 table shows specs of engine and fuel measurments
