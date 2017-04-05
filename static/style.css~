@@ -23,17 +23,3 @@ select {
 #makediv {
     margin-top: 15px;
 }
-
-#graph {
-    display:flex;
-    flex-direction:column;
-}
-.dimensions {
-    line-height:30px;
-    text-align: right;
-    background-color: #34495e;
-    color:white;
-    height:30px;
-    margin:5px;
-    padding-right: 5px;
-}

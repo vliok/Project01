@@ -17,25 +17,6 @@
                 </select>
 
             </div>
-	    
-	    <div id="graph">
-              <h2>Dimensions</h2>
-              <table>
-                <tr>
-                  <th>
-                    Height<br><br>
-                    Length<br><br>
-                    Width
-                  </th>
-		  <td>
-		    <div class="dimensions"></div>
-		    <div class="dimensions"></div>
-                    <div class="dimensions"></div>
-		  </td>
-		</tr>
-              </table>
-	    </div>
-	    
             <div id="display">
             </div>
         </div>

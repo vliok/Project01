@@ -45,19 +45,6 @@ $(document).ready( function() {
         
         //data for make and year
         var car = car_data[year][make];
-
-	var graph = d3.select("#graph");
-        var list_dimensions = [car["Dimensions"]["Height"],car["Dimensions"]["Length"],car["Dimensions"]["Width"]];
-        var dimensions = graph.selectAll(".dimensions")
-            .data(list_dimensions)
-            .transition()
-            .duration(1500)
-            .style("width", function(d) {
-                    return 2*d + "px";
-                })
-            .text( function(d) {
-                    return d + " in";
-                });
         
         d3.select('#display').text(JSON.stringify(car));
     }
