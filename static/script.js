@@ -36,6 +36,7 @@ $(document).ready( function() {
 
     $('#makes').on('change', function() {
         display();
+	anime();
     });
 
     function display() {
